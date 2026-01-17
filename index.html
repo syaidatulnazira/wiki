@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ms">
 <head>
     <meta charset="UTF-8">
@@ -9,71 +8,89 @@
 <body>
 
     <nav class="sidebar">
-        <div class="logo-wiki">WIKIPEDIA</div>
-        <button class="btn-theme" onclick="tukarTema()">Tukar Tema</button>
-        <a href="#">Laman Utama</a>
-        <a href="#">Kandungan</a>
-        <a href="#">Rencana Rawak</a>
-        <hr>
-        <strong>Bahasa</strong>
-        <a href="#">English</a>
-        <a href="#">Malay</a>
+        <div class="wiki-logo-box">
+            <img src="https://en.wikipedia.org/static/images/icons/wikipedia.png" alt="Wiki Logo">
+            <div class="wiki-brand">WIKIPEDIA</div>
+        </div>
+        <div class="sidebar-links">
+            <button class="btn-theme" onclick="tukarTema()">Tukar Tema</button>
+            <hr>
+            <a href="#">Laman Utama</a>
+            <a href="#">Tinjau</a>
+            <hr>
+            <strong>Navigasi</strong>
+            <div id="sidebar-toc"></div> </div>
     </nav>
 
     <main class="main-content">
         <header>
-            <h1>World Wide Fund for Nature</h1>
-            <p>Daripada Wikipedia, ensiklopedia bebas.</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Cari dalam artikel...">
+                <button onclick="cariTeks()">Cari</button>
+            </div>
+            <h1 id="firstHeading">World Wide Fund for Nature</h1>
+            <div class="siteSub">Daripada Wikipedia, ensiklopedia bebas.</div>
         </header>
 
         <aside class="infobox">
-            <table>
+            <table class="infobox-table">
                 <thead>
-                    <tr><th colspan="2">WWF</th></tr>
+                    <tr><th colspan="2" class="infobox-header">World Wide Fund for Nature</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td colspan="2" style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/24/WWF_logo.svg/150px-WWF_logo.svg.png" alt="WWF Logo"></td></tr>
+                    <tr><td colspan="2" style="text-align:center; padding:10px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/24/WWF_logo.svg/150px-WWF_logo.svg.png" alt="Logo WWF">
+                    </td></tr>
                     <tr><th>Singkatan</th><td>WWF</td></tr>
                     <tr><th>Ditubuhkan</th><td>29 April 1961</td></tr>
-                    <tr><th>Jenis</th><td>NGO Antarabangsa</td></tr>
                     <tr><th>Ibu Pejabat</th><td>Gland, Switzerland</td></tr>
+                    <tr><th>Laman Web</th><td><a href="https://worldwildlife.org">worldwildlife.org</a></td></tr>
                 </tbody>
             </table>
         </aside>
 
-        <section>
-            <p>
-                <b>World Wide Fund for Nature (WWF)</b> ialah pertubuhan bukan kerajaan antarabangsa yang memfokuskan kepada pemuliharaan alam sekitar.<sup><a href="#ref1" class="ref-link">[1]</a></sup>
-            </p>
+        <article class="mw-content">
+            <p><b>World Wide Fund for Nature (WWF)</b> ialah pertubuhan bukan kerajaan antarabangsa yang memfokuskan kepada pemuliharaan alam sekitar.<sup><a href="#ref1">[1]</a></sup></p>
 
             <div id="toc" class="toc">
                 <div class="toc-title">Isi kandungan</div>
                 <ul id="toc-list"></ul>
             </div>
 
-            <h2 id="sejarah">Sejarah Awal</h2>
-            <p>Idea untuk memulakan dana ini bermula dengan Manifesto Morges pada tahun 1961.</p>
+            <h2 id="sejarah">Sejarah</h2>
+            <p>Ditubuhkan pada 1961 oleh sekumpulan individu yang prihatin terhadap kemusnahan habitat liar.</p>
 
-            <h2 id="pencapaian">Pencapaian Utama</h2>
-            <p>WWF telah membantu melindungi spesies terancam seperti Panda Gergasi dan Harimau.</p>
+            <h2 id="presiden">Senarai Presiden</h2>
+            <p>Jadual di bawah menunjukkan pemimpin yang telah menerajui WWF:</p>
+            <table class="wikitable">
+                <thead>
+                    <tr>
+                        <th>Tahun</th>
+                        <th>Nama Presiden</th>
+                        <th>Negara</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1961–1976</td><td>HRH The Prince Bernhard</td><td>Belanda</td></tr>
+                    <tr><td>1976–1981</td><td>John H. Loudon</td><td>Belanda</td></tr>
+                    <tr><td>1981–1996</td><td>HRH The Duke of Edinburgh</td><td>UK</td></tr>
+                    <tr><td>2018–Kini</td><td>Pavan Sukhdev</td><td>India</td></tr>
+                </tbody>
+            </table>
 
-            <h2 id="galeri">Galeri Gambar</h2>
-            <div class="gallery-container">
+            <h2 id="galeri">Galeri</h2>
+            <div class="gallery-wiki">
                 <div class="gallery-item">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/180px-Grosser_Panda.JPG" alt="Panda">
                     <div class="caption">Panda Gergasi</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Tiger_in_the_wild.jpg/180px-Tiger_in_the_wild.jpg" alt="Harimau">
-                    <div class="caption">Harimau Bengal</div>
-                </div>
             </div>
 
             <h2 id="rujukan">Rujukan</h2>
-            <ol class="references-list">
-                <li id="ref1">WWF International - Sejarah Penubuhan (1961).</li>
+            <ol class="references">
+                <li id="ref1">WWF History Archive (2024).</li>
             </ol>
-        </section>
+        </article>
     </main>
 
     <script src="script.js"></script>
