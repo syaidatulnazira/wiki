@@ -1,27 +1,157 @@
 :root {
-    --wiki-blue: #0645ad;
-    --wiki-border: #a2a9b1;
+    --bg-color: #f6f6f6;         
+    --content-bg: #ffffff;      
+    --text-color: #202122;
+    --border-color: #a2a9b1;
+    --link-color: #0645ad;
+    --table-header: #eaecf0;
+    --infobox-bg: #f8f9fa;
 }
 
-body { font-family: sans-serif; margin: 0; display: flex; background: #f6f6f6; }
+.dark-mode {
+    --bg-color: #101418;
+    --content-bg: #1c2128;
+    --text-color: #adbac7;
+    --border-color: #444c56;
+    --link-color: #539bf5;
+    --table-header: #2d333b;
+    --infobox-bg: #22272e;
+}
 
-.sidebar { width: 170px; padding: 15px; position: fixed; height: 100vh; font-size: 13px; border-right: 1px solid var(--wiki-border); }
-.wiki-brand { font-family: serif; font-size: 18px; font-weight: bold; text-align: center; }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+}
 
-.main-content { margin-left: 200px; background: white; padding: 20px 40px; flex: 1; min-height: 100vh; }
-header { border-bottom: 1px solid var(--wiki-border); padding-bottom: 10px; margin-bottom: 20px; }
+body {
+    font-family: sans-serif;
+    display: flex;
+    color: var(--text-color);
+    transition: background-color 0.3s;
+}
 
-.search-container { float: right; }
-.search-container input { padding: 5px; border: 1px solid var(--wiki-border); }
-.search-container button { background: var(--wiki-blue); color: white; border: none; padding: 5px 10px; cursor: pointer; }
+.sidebar {
+    width: 180px;
+    padding: 20px;
+    background-color: var(--bg-color);
+    border-right: 1px solid var(--border-color);
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+}
 
-.wikitable { width: 100%; border-collapse: collapse; margin-top: 10px; }
-.wikitable th, .wikitable td { border: 1px solid var(--wiki-border); padding: 8px; font-size: 14px; }
-.wikitable th { background: #eaecf0; text-align: left; }
+.wiki-brand {
+    font-family: serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-.infobox { float: right; width: 280px; border: 1px solid var(--wiki-border); background: #f8f9fa; margin-left: 20px; font-size: 13px; }
-.infobox-header { background: #cedff2; padding: 8px; }
+.sidebar a {
+    display: block;
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
 
-.toc { background: #f8f9fa; border: 1px solid var(--wiki-border); padding: 10px; display: inline-block; margin: 20px 0; }
-.dark-mode { filter: invert(0.9) hue-rotate(180deg); }
-.dark-mode img { filter: invert(1) hue-rotate(180deg); }
+
+.main-content {
+    margin-left: 220px; 
+    background-color: var(--content-bg);
+    padding: 30px 50px;
+    flex: 1;
+    min-height: 100vh;
+    box-sizing: border-box;
+    border-left: 1px solid var(--border-color);
+}
+
+header {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.search-container {
+    float: right;
+    display: flex;
+}
+
+.search-container input {
+    padding: 6px;
+    border: 1px solid var(--border-color);
+    background: var(--content-bg);
+    color: var(--text-color);
+}
+
+.search-container button {
+    background: var(--link-color);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+/* Jadual & Infobox */
+.wikitable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: var(--infobox-bg);
+}
+
+.wikitable th, .wikitable td {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+}
+
+.wikitable th {
+    background-color: var(--table-header);
+}
+
+.infobox {
+    float: right;
+    width: 280px;
+    border: 1px solid var(--border-color);
+    background-color: var(--infobox-bg);
+    margin-left: 20px;
+    padding: 5px;
+}
+
+.infobox-header {
+    background-color: #cedff2;
+    color: #000; 
+    padding: 8px;
+    text-align: center;
+}
+
+.gallery-wiki {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    background: var(--infobox-bg);
+    padding: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.gallery-item {
+    border: 1px solid var(--border-color);
+    background: var(--content-bg);
+    padding: 5px;
+    text-align: center;
+}
+
+.gallery-item img { max-width: 100%; height: auto; }
+
+.btn-theme {
+    width: 100%;
+    padding: 8px;
+    background: var(--link-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
